@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of TestNav.</string>
+    <string>Downloads the latest version of TestNav.
+JSON_ARCH can be `arm` or `intel`.
+    </string>
     <key>Identifier</key>
     <string>com.github.nstrauss.download.TestNav</string>
     <key>Input</key>
@@ -12,6 +14,8 @@
         <string>TestNav</string>
         <key>SEARCH_URL</key>
         <string>https://download.testnav.com/installerVersions.json</string>
+        <key>JSON_ARCH</key>
+        <string>arm</string>
     </dict>
     <key>MinimumVersion</key>
     <string>1.4</string>
@@ -23,7 +27,7 @@
                 <key>json_url</key>
                 <string>%SEARCH_URL%</string>
                 <key>json_key</key>
-                <string>mac</string>
+                <string>mac_%JSON_ARCH%</string>
             </dict>
             <key>Processor</key>
             <string>com.github.nstrauss.SharedProcessors/SimpleJSONParser</string>
